@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge.googlecalendar;
+package sabot.googlecalendar;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;

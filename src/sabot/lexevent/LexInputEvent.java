@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge.lexevent;
+package sabot.lexevent;
 
 import java.util.Map;
 

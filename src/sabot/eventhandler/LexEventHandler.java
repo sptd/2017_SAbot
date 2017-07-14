@@ -1,12 +1,12 @@
-package jp.co.fxis.chatbotchallenge.eventhandler;
+package sabot.eventhandler;
 
 import java.io.IOException;
 import java.text.ParseException;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import jp.co.fxis.chatbotchallenge.lexevent.LexInputEvent;
-import jp.co.fxis.chatbotchallenge.lexevent.LexResponse;
+import sabot.lexevent.LexInputEvent;
+import sabot.lexevent.LexResponse;
 
 public class LexEventHandler {
 

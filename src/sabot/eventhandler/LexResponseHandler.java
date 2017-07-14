@@ -1,12 +1,12 @@
-package jp.co.fxis.chatbotchallenge.eventhandler;
+package sabot.eventhandler;
 
 import java.util.LinkedHashMap;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import jp.co.fxis.chatbotchallenge.lexevent.LexInputEvent;
-import jp.co.fxis.chatbotchallenge.lexevent.LexResponse;
-import jp.co.fxis.chatbotchallenge.lexevent.Type;
+import sabot.lexevent.LexInputEvent;
+import sabot.lexevent.LexResponse;
+import sabot.lexevent.Type;
 
 public abstract class LexResponseHandler {
 	protected final String INPUT_INVALID_MESSAGE = "Sorry. the error is occurred. \r\n Please retry initially.";

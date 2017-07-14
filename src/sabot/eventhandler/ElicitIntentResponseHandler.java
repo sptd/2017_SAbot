@@ -1,11 +1,11 @@
-package jp.co.fxis.chatbotchallenge.eventhandler;
+package sabot.eventhandler;
 
 import java.io.IOException;
 import java.text.ParseException;
 
-import jp.co.fxis.chatbotchallenge.lexevent.LexInputEvent;
-import jp.co.fxis.chatbotchallenge.lexevent.LexResponse;
-import jp.co.fxis.chatbotchallenge.lexevent.Type;
+import sabot.lexevent.LexInputEvent;
+import sabot.lexevent.LexResponse;
+import sabot.lexevent.Type;
 
 public class ElicitIntentResponseHandler extends LexResponseHandler {
 

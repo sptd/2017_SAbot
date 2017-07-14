@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge.eventhandler;
+package sabot.eventhandler;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -8,11 +8,11 @@ import java.util.LinkedHashMap;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 
-import jp.co.fxis.chatbotchallenge.lexevent.LexInputEvent;
-import jp.co.fxis.chatbotchallenge.lexevent.LexResponse;
-import jp.co.fxis.chatbotchallenge.lexevent.Message;
-import jp.co.fxis.chatbotchallenge.lexevent.Type;
-import jp.co.fxis.chatbotchallenge.lexevent.Message.ContentType;
+import sabot.lexevent.LexInputEvent;
+import sabot.lexevent.LexResponse;
+import sabot.lexevent.Message;
+import sabot.lexevent.Type;
+import sabot.lexevent.Message.ContentType;
 
 public abstract class GoogleCalendarResponseHandler extends LexResponseHandler {
 	protected static final String USER_FILE_FOLDER = "userInfo/";

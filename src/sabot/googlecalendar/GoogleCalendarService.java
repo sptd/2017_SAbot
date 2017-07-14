@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge.googlecalendar;
+package sabot.googlecalendar;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;

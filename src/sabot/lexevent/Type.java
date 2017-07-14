@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge.lexevent;
+package sabot.lexevent;
 
 public enum Type {
 	ElicitIntent("ElicitIntent"), ConfirmIntent("ConfirmIntent"), ElicitSlot("ElicitSlot"), Close(

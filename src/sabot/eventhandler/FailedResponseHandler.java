@@ -1,11 +1,11 @@
-package jp.co.fxis.chatbotchallenge.eventhandler;
+package sabot.eventhandler;
 
-import jp.co.fxis.chatbotchallenge.lexevent.FulfillmentState;
-import jp.co.fxis.chatbotchallenge.lexevent.LexInputEvent;
-import jp.co.fxis.chatbotchallenge.lexevent.LexResponse;
-import jp.co.fxis.chatbotchallenge.lexevent.Message;
-import jp.co.fxis.chatbotchallenge.lexevent.Type;
-import jp.co.fxis.chatbotchallenge.lexevent.Message.ContentType;
+import sabot.lexevent.FulfillmentState;
+import sabot.lexevent.LexInputEvent;
+import sabot.lexevent.LexResponse;
+import sabot.lexevent.Message;
+import sabot.lexevent.Type;
+import sabot.lexevent.Message.ContentType;
 
 public class FailedResponseHandler extends LexResponseHandler {
 	public FailedResponseHandler(LexInputEvent input) throws EventHandlerException{

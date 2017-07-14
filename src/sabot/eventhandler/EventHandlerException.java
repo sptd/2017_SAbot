@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge.eventhandler;
+package sabot.eventhandler;
 
 public class EventHandlerException extends Exception {
 	/**

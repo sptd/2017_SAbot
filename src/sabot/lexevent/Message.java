@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge.lexevent;
+package sabot.lexevent;
 
 public class Message implements Cloneable {
 	private String contentType = null;

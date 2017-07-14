@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge.eventhandler;
+package sabot.eventhandler;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,13 +20,13 @@ import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.model.Event;
 import com.google.api.services.calendar.model.EventDateTime;
 
-import jp.co.fxis.chatbotchallenge.googlecalendar.GoogleCalendarService;
-import jp.co.fxis.chatbotchallenge.lexevent.FulfillmentState;
-import jp.co.fxis.chatbotchallenge.lexevent.LexInputEvent;
-import jp.co.fxis.chatbotchallenge.lexevent.LexResponse;
-import jp.co.fxis.chatbotchallenge.lexevent.Message;
-import jp.co.fxis.chatbotchallenge.lexevent.Type;
-import jp.co.fxis.chatbotchallenge.lexevent.Message.ContentType;
+import sabot.googlecalendar.GoogleCalendarService;
+import sabot.lexevent.FulfillmentState;
+import sabot.lexevent.LexInputEvent;
+import sabot.lexevent.LexResponse;
+import sabot.lexevent.Message;
+import sabot.lexevent.Type;
+import sabot.lexevent.Message.ContentType;
 
 public class GoogleCalendarAddHandler extends GoogleCalendarResponseHandler {
 	protected static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");

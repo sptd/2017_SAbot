@@ -1,4 +1,4 @@
-package jp.co.fxis.chatbotchallenge;
+package sabot;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -10,11 +10,12 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import jp.co.fxis.chatbotchallenge.eventhandler.EventHandlerException;
-import jp.co.fxis.chatbotchallenge.eventhandler.FailedResponseHandler;
-import jp.co.fxis.chatbotchallenge.eventhandler.LexEventHandler;
-import jp.co.fxis.chatbotchallenge.lexevent.LexInputEvent;
-import jp.co.fxis.chatbotchallenge.lexevent.LexResponse;
+
+import sabot.eventhandler.EventHandlerException;
+import sabot.eventhandler.FailedResponseHandler;
+import sabot.eventhandler.LexEventHandler;
+import sabot.lexevent.LexInputEvent;
+import sabot.lexevent.LexResponse;
 
 public class LambdaFunctionHandler implements RequestHandler<Object, LexResponse> {
 	static String BUCKET_NAME;

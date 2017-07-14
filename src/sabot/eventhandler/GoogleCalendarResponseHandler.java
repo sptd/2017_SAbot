@@ -21,14 +21,17 @@ public abstract class GoogleCalendarResponseHandler extends LexResponseHandler {
 	protected static final String GOOGLE_API_KEY_FILE_NAME = "googleAPIkey.json";
 	protected static final Region REGION = Region.getRegion(Regions.AP_NORTHEAST_1);
 	protected static final String[] EXCEPT_LIST = { " ", "&", ";", ":" };
-	protected static final String IVDALIDATE_MEMBER_MESSAGE = " does not exist in member lists or the input form is invalid. \r\n Please retry telling me member names using correct input. \n (ex)member1,member2, member3";
+	protected static final String IVDALIDATE_MEMBER_MESSAGE = " does not exist in member lists or the input form is invalid. \r\n Please retry telling me member names using correct input. \n (ex1)\"member1,member2, member3, ...\" \n (ex2)\"all\" or \"all members\" or \"everyone\"";
 	protected static final String IVDALIDATE_DATE_MESSAGE = " is not valid. \n Please tell me date at day unit. \n (For example, 2017-07-26, tomorrow, Friday, and so on).";
 	protected static final String IVDALIDATE_START_MESSAGE = " is not valid or after the EndTime. \r\n Please tell me the correct time. \n (Do not use [night], [morning], [afternoon], and [evening]).";
 	protected static final String IVDALIDATE_END_MESSAGE = " is not valid or before the StartTime. \r\n Please tell me the correct time. \n (Do not use [night], [morning], [afternoon], and [evening]).";
 	protected static final String IVDALIDATE_LOCATION_MESSAGE = " is blank and it is not valid. \r\n Please retry.";
 	protected static final String IVDALIDATE_TITLE_MESSAGE = " is blank and it is not valid. \r\n Please retry.";
-	private static final String UTTERRANCE_MEMBER_MESSAGE_1 = "schedule";
-	private static final String UTTERRANCE_MEMBER_MESSAGE_2 = "Schedule";
+//	protected static final String UTTERRANCE_MEMBER_MESSAGE_1 = "schedule";
+//	protected static final String UTTERRANCE_MEMBER_MESSAGE_2 = "Schedule";
+	protected static final String ALL_MEMBERS_1 = "all members";
+	protected static final String ALL_MEMBERS_2 = "all";
+	protected static final String ALL_MEMBERS_3 = "everyone";
 
 	public GoogleCalendarResponseHandler(LexInputEvent input, String bucketName)
 			throws EventHandlerException, IOException, ParseException {
@@ -109,8 +112,6 @@ public abstract class GoogleCalendarResponseHandler extends LexResponseHandler {
 	}
 
 	protected String[] getMemberList(String message) {
-		message = message.replaceAll(UTTERRANCE_MEMBER_MESSAGE_1, "");
-		message = message.replaceAll(UTTERRANCE_MEMBER_MESSAGE_2, "");
 
 		for (String str : EXCEPT_LIST) {
 			message = message.replace(str, "");

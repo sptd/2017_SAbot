@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Properties;
@@ -155,9 +156,32 @@ public class GoogleCalendarReferencerHandler extends GoogleCalendarResponseHandl
 
 					switch (slotKey) {
 					case SLOT_NAME_1:
-						slotValue = input.getInputTranscript();
+						if (slotValue == null) {
+							slotValue = input.getInputTranscript();
+						}
+						System.out.println(slotValue);
 						validator = isValidateMember(slotValue);
 						if (validator) {
+							if (slotValue.equalsIgnoreCase(ALL_MEMBERS_1) || slotValue.equalsIgnoreCase(ALL_MEMBERS_2)
+									|| slotValue.equalsIgnoreCase(ALL_MEMBERS_3)) {
+								Properties properties = new Properties();
+								StringBuilder sb = new StringBuilder();
+								if (s3 == null) {
+									// s3 =
+									// AmazonS3ClientBuilder.defaultClient();
+									s3 = new AmazonS3Client();
+								}
+								S3Object object = s3.getObject(
+										new GetObjectRequest(this.bucketName, USER_FILE_FOLDER + USER_FILE_NAME));
+								properties.load(object.getObjectContent());
+								Enumeration en = properties.propertyNames();
+								while (en.hasMoreElements()) {
+									sb.append((String) en.nextElement());
+									sb.append(",");
+								}
+								slotValue = new String(sb);
+							}
+
 							input.getCurrentIntent().getSlots().replace(slotKey, slotValue);
 						}
 						invalidateMessage = IVDALIDATE_MEMBER_MESSAGE;
@@ -198,13 +222,20 @@ public class GoogleCalendarReferencerHandler extends GoogleCalendarResponseHandl
 
 	private boolean isValidateMember(String memberName) throws IOException {
 		Properties properties = new Properties();
+
+		if (memberName.equalsIgnoreCase(ALL_MEMBERS_1) || memberName.equalsIgnoreCase(ALL_MEMBERS_2)
+				|| memberName.equalsIgnoreCase(ALL_MEMBERS_3)) {
+			return true;
+		}
 		String[] membersList = this.getMemberList(memberName);
+
 		if (s3 == null) {
 			// s3 = AmazonS3ClientBuilder.defaultClient();
 			s3 = new AmazonS3Client();
 		}
 		S3Object object = s3.getObject(new GetObjectRequest(this.bucketName, USER_FILE_FOLDER + USER_FILE_NAME));
 		properties.load(object.getObjectContent());
+
 		for (String member : membersList) {
 			if (!properties.containsKey(member)) {
 				return false;

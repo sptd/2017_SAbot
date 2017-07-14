@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.LinkedHashMap;
 import java.util.Properties;
 import java.util.TimeZone;
@@ -42,7 +43,7 @@ public class GoogleCalendarAddHandler extends GoogleCalendarResponseHandler {
 	private static final String SLOT_NAME_6 = "Title";
 	private static final String[] addSlotList = { SLOT_NAME_1, SLOT_NAME_2, SLOT_NAME_3, SLOT_NAME_4, SLOT_NAME_5,
 			SLOT_NAME_6 };
-	
+
 	private AmazonS3 s3;
 
 	public GoogleCalendarAddHandler(LexInputEvent input, String bucketName)
@@ -125,9 +126,30 @@ public class GoogleCalendarAddHandler extends GoogleCalendarResponseHandler {
 
 					switch (slotKey) {
 					case SLOT_NAME_1:
-						slotValue = input.getInputTranscript();
+						if (slotValue == null) {
+							slotValue = input.getInputTranscript();
+						}
 						validator = isValidateMember(slotValue);
 						if (validator) {
+							if (slotValue.equalsIgnoreCase(ALL_MEMBERS_1) || slotValue.equalsIgnoreCase(ALL_MEMBERS_2)
+									|| slotValue.equalsIgnoreCase(ALL_MEMBERS_3)) {
+								Properties properties = new Properties();
+								StringBuilder sb = new StringBuilder();
+								if (s3 == null) {
+									// s3 =
+									// AmazonS3ClientBuilder.defaultClient();
+									s3 = new AmazonS3Client();
+								}
+								S3Object object = s3.getObject(
+										new GetObjectRequest(this.bucketName, USER_FILE_FOLDER + USER_FILE_NAME));
+								properties.load(object.getObjectContent());
+								Enumeration en = properties.propertyNames();
+								while (en.hasMoreElements()) {
+									sb.append((String) en.nextElement());
+									sb.append(",");
+								}
+								slotValue = new String(sb);
+							}
 							input.getCurrentIntent().getSlots().replace(slotKey, slotValue);
 						}
 						invalidateMessage = IVDALIDATE_MEMBER_MESSAGE;
@@ -201,13 +223,19 @@ public class GoogleCalendarAddHandler extends GoogleCalendarResponseHandler {
 
 	private boolean isValidateMember(String memberName) throws IOException {
 		Properties properties = new Properties();
+		if (memberName.equalsIgnoreCase(ALL_MEMBERS_1) || memberName.equalsIgnoreCase(ALL_MEMBERS_2)
+				|| memberName.equalsIgnoreCase(ALL_MEMBERS_3)) {
+			return true;
+		}
 		String[] membersList = this.getMemberList(memberName);
+
 		if (s3 == null) {
 			// s3 = AmazonS3ClientBuilder.defaultClient();
 			s3 = new AmazonS3Client();
 		}
 		S3Object object = s3.getObject(new GetObjectRequest(this.bucketName, USER_FILE_FOLDER + USER_FILE_NAME));
 		properties.load(object.getObjectContent());
+
 		for (String member : membersList) {
 			if (!properties.containsKey(member)) {
 				return false;
@@ -260,7 +288,7 @@ public class GoogleCalendarAddHandler extends GoogleCalendarResponseHandler {
 			}
 
 			return false;
-		} catch (ParseException e) {
+		} catch (Exception e) {
 			return false;
 		}
 	}

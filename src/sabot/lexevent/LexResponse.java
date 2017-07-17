@@ -101,4 +101,5 @@ public class LexResponse {
 		dialogAction.responseCard = responseCard;
 	}
 
+	
 }

@@ -86,7 +86,5 @@ public class LexInputEvent {
 	public void setSessionAttributes(Map<String, String> sessionAttributes) {
 		this.sessionAttributes = sessionAttributes;
 	}
-	
-	
 
 }

@@ -167,8 +167,7 @@ public class GoogleCalendarReferencerHandler extends GoogleCalendarResponseHandl
 								Properties properties = new Properties();
 								StringBuilder sb = new StringBuilder();
 								if (s3 == null) {
-									// s3 =
-									// AmazonS3ClientBuilder.defaultClient();
+									// s3 = AmazonS3ClientBuilder.defaultClient();
 									s3 = new AmazonS3Client();
 								}
 								S3Object object = s3.getObject(

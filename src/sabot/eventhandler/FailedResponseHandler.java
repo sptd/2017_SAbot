@@ -21,20 +21,14 @@ public class FailedResponseHandler extends LexResponseHandler {
 
 	@Override
 	protected void setFulufillmentResponse() {
-		// TODO 自動生成されたメソッド・スタブ
-		
 	}
 
 	@Override
 	protected void setInitializationAndValidationReseponse() throws EventHandlerException {
-		// TODO 自動生成されたメソッド・スタブ
-		
 	}
 
 	@Override
 	protected void setSlotList() {
-		// TODO 自動生成されたメソッド・スタブ
-		
 	}
 
 }

@@ -40,7 +40,7 @@ public class LexEventHandler {
 	}
 
 	public LexResponse getJsonString() throws JsonProcessingException {
-		System.out.println("getOutput()@EventHandler");
+		System.out.println("getOutput() @EventHandler");
 		return responseHandler.getJsonString();
 	}
 

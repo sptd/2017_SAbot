@@ -43,7 +43,6 @@ public class GoogleCalendarAddHandler extends GoogleCalendarResponseHandler {
 	private static final String SLOT_NAME_6 = "Title";
 	private static final String[] addSlotList = { SLOT_NAME_1, SLOT_NAME_2, SLOT_NAME_3, SLOT_NAME_4, SLOT_NAME_5,
 			SLOT_NAME_6 };
-
 	private AmazonS3 s3;
 
 	public GoogleCalendarAddHandler(LexInputEvent input, String bucketName)

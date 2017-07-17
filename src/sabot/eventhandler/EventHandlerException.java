@@ -1,9 +1,7 @@
 package sabot.eventhandler;
 
 public class EventHandlerException extends Exception {
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private final static String MESSAGE = "The exception is occurred in event handler.";
 

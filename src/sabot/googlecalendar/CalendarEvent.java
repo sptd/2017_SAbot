@@ -1,10 +1,8 @@
 package sabot.googlecalendar;
 
-import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import com.google.api.services.calendar.model.Event;

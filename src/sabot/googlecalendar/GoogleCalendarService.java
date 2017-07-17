@@ -26,6 +26,7 @@ public class GoogleCalendarService {
 		GoogleCredential credential = GoogleCredential.fromStream(this.input, HTTP_TRANSPORT, JSON_FACTORY)
 				.createScoped(Arrays.asList(CalendarScopes.CALENDAR));
 		credential.refreshToken();
+		
 		calendarService = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential)
 				.setApplicationName("GoogleCalendar").build();
 	}

@@ -27,8 +27,6 @@ public abstract class GoogleCalendarResponseHandler extends LexResponseHandler {
 	protected static final String IVDALIDATE_END_MESSAGE = " is not valid or before the StartTime. \r\n Please tell me the correct time. \n (Do not use [night], [morning], [afternoon], and [evening]).";
 	protected static final String IVDALIDATE_LOCATION_MESSAGE = " is blank and it is not valid. \r\n Please retry.";
 	protected static final String IVDALIDATE_TITLE_MESSAGE = " is blank and it is not valid. \r\n Please retry.";
-//	protected static final String UTTERRANCE_MEMBER_MESSAGE_1 = "schedule";
-//	protected static final String UTTERRANCE_MEMBER_MESSAGE_2 = "Schedule";
 	protected static final String ALL_MEMBERS_1 = "all members";
 	protected static final String ALL_MEMBERS_2 = "all";
 	protected static final String ALL_MEMBERS_3 = "everyone";

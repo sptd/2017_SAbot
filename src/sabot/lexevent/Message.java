@@ -6,7 +6,6 @@ public class Message implements Cloneable {
 
 	public enum ContentType {
 		PlainText("PlainText"), SMML("SMML");
-
 		private String value;
 
 		private ContentType(String value) {

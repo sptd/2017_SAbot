@@ -38,9 +38,7 @@ public class LambdaFunctionHandler implements RequestHandler<Object, LexResponse
 			lambdaLogger.log("ERROR!! LexInputEvent cannot read correctly.\n");
 			try {
 				return new FailedResponseHandler(null).getJsonString();
-			} catch (EventHandlerException e1) {
-				loggingException(e1);
-			} catch (JsonProcessingException e1) {
+			} catch (Exception e1) {
 				loggingException(e1);
 			}
 		}
@@ -49,9 +47,7 @@ public class LambdaFunctionHandler implements RequestHandler<Object, LexResponse
 			lambdaLogger.log("ERROR!! LexInputEvent cannot read correctly.\n");
 			try {
 				return new FailedResponseHandler(null).getJsonString();
-			} catch (EventHandlerException e) {
-				loggingException(e);
-			} catch (JsonProcessingException e) {
+			} catch (Exception e) {
 				loggingException(e);
 			}
 		}
@@ -80,10 +76,6 @@ public class LambdaFunctionHandler implements RequestHandler<Object, LexResponse
 					+ "a serious internal problem while trying to communicate with S3, "
 					+ "such as not being able to access the network.\n");
 			lambdaLogger.log("Error Message: " + ace.getMessage() + "\n");
-		} catch (EventHandlerException e) {
-			loggingException(e);
-		} catch (JsonProcessingException e) {
-			loggingException(e);
 		} catch (Exception e) {
 			loggingException(e);
 		}
@@ -110,7 +102,7 @@ public class LambdaFunctionHandler implements RequestHandler<Object, LexResponse
 		PrintWriter pw = new PrintWriter(sw);
 		e.printStackTrace(pw);
 		pw.flush();
-		lambdaLogger.log("Exception occurred!!\n");
+		lambdaLogger.log(e.getClass().getName() + "is  occurred!!\n");
 		lambdaLogger.log("1. Message...\n" + e.getMessage() + "\n");
 		lambdaLogger.log("2. StackTrace...\n" + sw.toString() + "\n");
 	}

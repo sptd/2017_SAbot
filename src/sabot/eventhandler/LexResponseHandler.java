@@ -74,7 +74,6 @@ public abstract class LexResponseHandler {
 	}
 
 	protected abstract void setFulufillmentResponse();
-
 	protected abstract void setInitializationAndValidationReseponse() throws EventHandlerException;
 
 }

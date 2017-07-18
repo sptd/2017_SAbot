@@ -122,7 +122,7 @@ Configure the following test event to test your lambda function.
         3. Set Session Timeout - 5 mins
         4. Add AMazon lex basic role to your Bot app - AWSServiceRoleForLexBots
         
-![MacDown Screenshot](https://s3-us-west-2.amazonaws.com/re-invent-botworkshop/website/CreateBot.png)
+![MacDown Screenshot](2017_SAbot/README_images/lex1_1.png)
 
 
 

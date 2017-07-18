@@ -121,16 +121,17 @@ Configure the following test event to test your lambda function.
         2. Choose an output voice - None. This is only a text based application.
         3. Set Session Timeout - 5 mins
         4. Add AMazon lex basic role to your Bot app - AWSServiceRoleForLexBots
-        
+      This repository contains the SAbot definition file(named SAbot.json), which is export by https://gist.github.com/nhira/3036fdc49f51e838f1beea8dcb7c1fa3
+       
 ![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28303779-bab76c52-6bcf-11e7-86e7-77fe83c30bc9.png)
 
 ## Step 3: Creating your Bot Conversations
 
-####2. Create Slots
+#### 2. Create Slots
 
       In this section you create the three slots type for ChatBot.
       
-####Create your first slot
+#### Create your first slot
 
       First slot type is for to input the user you want to check the schedule.
       Slot Type Name : Users

@@ -3,8 +3,7 @@
 #Step 1: Create the AWS Lambda function
 
 
-#### Step 1.1
-
+### Step 1.1
 
 lamda functionを作るよ
 

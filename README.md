@@ -109,62 +109,8 @@ Configure the following test event to test your lambda function.
 
 
 
-## Step 2: Creating your Bot
-
-#### 1. Create Amazon Lex Bot 
-
-      Open the Amazon Lex console at https://console.aws.amazon.com/lex/.
-      On the Bots page, choose Create .
-      Select custom bot and provide the following information, then choose Create.
-      Provide The Following Information:
-        1. Bot Name: ScheduleAdjustment
-        2. Choose an output voice - None. This is only a text based application.
-        3. Set Session Timeout - 5 mins
-        4. Add AMazon lex basic role to your Bot app - AWSServiceRoleForLexBots
-      This repository contains the SAbot definition file(named SAbot.json), which is export by https://gist.github.com/nhira/3036fdc49f51e838f1beea8dcb7c1fa3
+## Step 2: Creating your Bot and Creating your Bot Conversations
+      Please read "doc/SAbot_Lex Configuration.pdf" in this repository.
+      This repository also contains the SAbot definition file(named SAbot.json), which is export by https://gist.github.com/nhira/3036fdc49f51e838f1beea8dcb7c1fa3
        
-![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28303779-bab76c52-6bcf-11e7-86e7-77fe83c30bc9.png)
-
-## Step 3: Creating your Bot Conversations
-
-#### 2. Create Slots
-
-      In this section you create the three slots type for ChatBot.
-      
-#### Create your first slot
-
-      First slot type is for to input the user you want to check the schedule.
-      Slot Type Name : Users
-      
-![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28303872-26568042-6bd0-11e7-9eda-b7de54cc183b.png)
-
-#### Configure your first slot
-
-      Add the member name as values.
-      Also add the following, chatbot can specify all members at once.
-      ・all
-      ・all members
-      ・everyone
-      When input is completed, save your slot.
-
-#### Create your second slot
-
-      Second slot type is for to input the title of the schedule.
-      Slot Type Name : Title
-
-      
-![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28304078-1df63c02-6bd1-11e7-9755-2e0bed098570.png)
-
-#### Configure your second slot
-
-      Add the types of schedule as values.
-      The following is an example.
-      
-![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28304121-417ea16e-6bd1-11e7-813d-6bc3e95423de.png)   
-      
-
-
-      
-
-
 

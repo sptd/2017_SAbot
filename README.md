@@ -12,17 +12,28 @@ Instructions:
       1. Name your lambda function : ScheduleAjustmentBotlambdaFunction_v3
       
       2. Environment function : 
+      
       (i)Bucket name, which contains "userInfo/user.properties" and "apiKey/googleAPIKey.json".
+      
       KEY : BACKET_NAME
+      
       VALUE :Created bucket Name
+      
       (ii)Time Zone ID
+      
       KEY : TZ
+      
       VALUE :a short ID adapts your Google Calendar time zone[(ex)Asia/Tokyo]
-      3. Runtime - Java 8
-      4. Code Entry - Upload the zip you downloaded
+      
+      3. Runtime - Java 8
+      
+      4. Code Entry - Upload the zip you downloaded
+      
       5. Handler Section - sabot.LambdaFunctionHandler
+      
       6. Select an existing role -  LexlambdaS3Role
-      4. Set time to 15 secs
+      
+      4. Set time to 15 secs
 
 #### 5. Test your lambda function. 
 

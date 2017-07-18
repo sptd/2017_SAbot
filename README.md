@@ -15,6 +15,8 @@ Steps to build the Moviepedia Bot
 Use this end point to upload the lambda code from s3:
 https://s3.amazonaws.com/lambda-function-bucket-us-east-1-1498394635267/ScheduleAjustmentBotlambdaFunction_v3.zip
 
+The lambda function uses Java SE-1.8, AWS SDK for Java(1.11.153), AWS lambda Java Function Runtime(1.1), and google api jar files(1.22.0).
+
 Instructions: 
 -------------
 ##### Configure Function: 

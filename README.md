@@ -137,6 +137,33 @@ Configure the following test event to test your lambda function.
       Slot Type Name : Users
       
 ![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28303872-26568042-6bd0-11e7-9eda-b7de54cc183b.png)
+
+#### Configure your first slot
+
+      Add the member name as values.
+      Also add the following, chatbot can specify all members at once.
+      ・all
+      ・all members
+      ・everyone
+      When input is completed, save your slot.
+
+#### Create your second slot
+
+      Second slot type is for to input the title of the schedule.
+      Slot Type Name : Title
+
+      
+![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28304078-1df63c02-6bd1-11e7-9755-2e0bed098570.png)
+
+#### Configure your second slot
+
+      Add the types of schedule as values.
+      The following is an example.
+      
+![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28304121-417ea16e-6bd1-11e7-813d-6bc3e95423de.png)   
+      
+
+
       
 
 

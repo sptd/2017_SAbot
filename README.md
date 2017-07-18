@@ -23,40 +23,40 @@ Instructions:
 
 ##### Function Trriger: 
 
-{
-    "Version": "2012-10-17",
-    "Id": "default",
-    "Statement": [
-        {
-            "Sid": "lex-us-east-1-Reference",
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "lex.amazonaws.com"
-            },
-            "Action": "lambda:invokeFunction",
-            "Resource": "arn:aws:lambda:us-east-1:818867563308:function:ScheduleAjustmentBotlambdaFunction_v3",
-            "Condition": {
-                "ArnLike": {
-                    "AWS:SourceArn": "arn:aws:lex:us-east-1:818867563308:intent:Reference:*"
-                }
-            }
-        },
-        {
-            "Sid": "lex-us-east-1-Add",
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "lex.amazonaws.com"
-            },
-            "Action": "lambda:invokeFunction",
-            "Resource": "arn:aws:lambda:us-east-1:818867563308:function:ScheduleAjustmentBotlambdaFunction_v3",
-            "Condition": {
-                "ArnLike": {
-                    "AWS:SourceArn": "arn:aws:lex:us-east-1:818867563308:intent:Add:*"
-                }
-            }
-        }
-    ]
-}
+      {
+          "Version": "2012-10-17",
+          "Id": "default",
+          "Statement": [
+              {
+                  "Sid": "lex-us-east-1-Reference",
+                  "Effect": "Allow",
+                  "Principal": {
+                      "Service": "lex.amazonaws.com"
+                  },
+                  "Action": "lambda:invokeFunction",
+                  "Resource": "arn:aws:lambda:us-east-1:818867563308:function:ScheduleAjustmentBotlambdaFunction_v3",
+                  "Condition": {
+                      "ArnLike": {
+                          "AWS:SourceArn": "arn:aws:lex:us-east-1:818867563308:intent:Reference:*"
+                      }
+                  }
+              },
+              {
+                  "Sid": "lex-us-east-1-Add",
+                  "Effect": "Allow",
+                  "Principal": {
+                      "Service": "lex.amazonaws.com"
+                  },
+                  "Action": "lambda:invokeFunction",
+                  "Resource": "arn:aws:lambda:us-east-1:818867563308:function:ScheduleAjustmentBotlambdaFunction_v3",
+                  "Condition": {
+                      "ArnLike": {
+                          "AWS:SourceArn": "arn:aws:lex:us-east-1:818867563308:intent:Add:*"
+                      }
+                  }
+              }
+          ]
+      }
 
 #### 5. Test your lambda function. 
 

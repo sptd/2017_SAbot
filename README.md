@@ -111,5 +111,20 @@ Configure the following test event to test your lambda function.
 
 ## Step 2: Creating your Bot
 
+#### 1. Create Amazon Lex Bot 
+
+      Open the Amazon Lex console at https://console.aws.amazon.com/lex/.
+      On the Bots page, choose Create .
+      Select custom bot and provide the following information, then choose Create.
+      Provide The Following Information:
+        1. Bot Name: ScheduleAdjustment
+        2. Choose an output voice - None. This is only a text based application.
+        3. Set Session Timeout - 5 mins
+        4. Add AMazon lex basic role to your Bot app - AWSServiceRoleForLexBots
+        
+![MacDown Screenshot](https://s3-us-west-2.amazonaws.com/re-invent-botworkshop/website/CreateBot.png)
+
+
+
 ## Step 3: Creating your Bot Conversations
 

@@ -110,7 +110,7 @@ Configure the following test event to test your lambda function.
 
 
 ## Step 2: Creating your Bot and Creating your Bot Conversations
-      Please read "doc/SAbot_Lex Configuration.pdf" in this repository.
-      This repository also contains the SAbot definition file(named SAbot.json), which is export by https://gist.github.com/nhira/3036fdc49f51e838f1beea8dcb7c1fa3
+      
+      Please read "doc/SAbot_Lex Configuration.pdf" in this repository.This repository also contains the SAbot definition file(named SAbot.json), which is export by https://gist.github.com/nhira/3036fdc49f51e838f1beea8dcb7c1fa3
        
 

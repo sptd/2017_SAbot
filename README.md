@@ -1,6 +1,4 @@
 # 2017_SAbot
- 
-==================
 
 Schedule Adjustment Chatbot 
 ==================

@@ -124,7 +124,19 @@ Configure the following test event to test your lambda function.
         
 ![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28303779-bab76c52-6bcf-11e7-86e7-77fe83c30bc9.png)
 
-
-
 ## Step 3: Creating your Bot Conversations
+
+####2. Create Slots
+
+      In this section you create the three slots type for ChatBot.
+      
+####Create your first slot
+
+      First slot type is for to input the user you want to check the schedule.
+      Slot Type Name : Users
+      
+![MacDown Screenshot](https://user-images.githubusercontent.com/30132513/28303872-26568042-6bd0-11e7-9eda-b7de54cc183b.png)
+      
+
+
 

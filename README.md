@@ -58,44 +58,54 @@ Instructions:
           ]
       }
 
-#### 5. Test your lambda function. 
+#### Test your lambda function. 
 
 Configure the following test event to test your lambda function.
 
-    {
-    "messageVersion": "1.0",
-    "invocationSource": "FulfillmentCodeHook",
-    "userId": "user-1",
-    "sessionAttributes": {},
-    "bot": {
-    "name": "movieInfoApp",
-    "alias": "$LATEST",
-    "version": "$LATEST"
-    },
-    "outputDialogMode": "Text",
-    "currentIntent": {
-    "name": "movieInfo",
-    "slots": {
-      "name": "Suicide Squad",
-      "summary": "Director"
-      },
-    "confirmationStatus": "None"
-     }
-    }
+      {
+          "messageVersion": "1.0",
+          "invocationSource": "DialogCodeHook",
+          "userId": "be7df995-1361-420a-a4c1-541613b6bd95:T5HPQH8VA:U5JHEFMQF",
+          "sessionAttributes": {},
+          "bot": {
+              "name": "ScheduleAdjustment",
+              "alias": null,
+              "version": "6"
+          },
+          "outputDialogMode": "Text",
+          "currentIntent": {
+              "name": "Add",
+              "slots": {
+                  "EndTime": null,
+                  "StartTime": null,
+                  "Title": null,
+                  "Member": null,
+                  "Date": null,
+                  "Location": null
+              },
+              "confirmationStatus": "None"
+          },
+          "inputTranscript": "add"
+      }
 
 #### The output should look like this: 
 
-    {
-     "sessionAttributes": {},
-     "dialogAction": {
-     "type": "Close",
-     "fulfillmentState": "Fulfilled",
-     "message": {
-       "contentType": "PlainText",
-       "content": "Director of Suicide Squad is/are: David Ayer"
-       }
-     }
-    }
+      {
+          "sessionAttributes": {},
+          "dialogAction": {
+              "type": "ElicitSlot",
+              "intentName": "Add",
+              "slots": {
+                  "EndTime": null,
+                  "StartTime": null,
+                  "Title": null,
+                  "Member": null,
+                  "Date": null,
+                  "Location": null
+              },
+              "slotToElicit": "Member"
+          }
+      }
 
 
 

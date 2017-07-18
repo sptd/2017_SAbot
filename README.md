@@ -1,4 +1,17 @@
 # 2017_SAbot
+ 
+==================
+
+Schedule Adjustment Chatbot 
+==================
+
+This bot is SAbot(Schedule Adjustment Chatbot).
+SAbot confirms team member’s Schedule ,and accordingly adjusts Schedule.
+No matter where you are, will be able to confirms team member’s Schedule.
+Let’s using to confirms team member’s Schedule !
+
+Steps to build the Moviepedia Bot 
+---------------------------------
 
 ## Step 1: Create the AWS Lambda function
 Use this end point to upload the lambda code from s3:
